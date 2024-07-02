@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  mysql-db:
+    image: mysql
+    container_name: demo-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: inventory
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "5680:3306"
+    networks:
+      - mysql-app-network
+  mysql-app:
+    container_name: demo-app-mysql
+    image: mysql-app:v7
+#    build:
+#      dockerfile: Dockerfile
+    networks:
+      - mysql-app-network
+    ports:
+      - "8088:8088"
+    depends_on:
+      - mysql-db
+
+
+volumes:
+  db_data: {}
+networks:
+  mysql-app-network:
