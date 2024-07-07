@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20240707-08
+      author: AHasanov
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: name
+                  value: 'Ali'
+              - column:
+                  name: lastname
+                  value: 'Hasanov'
+              - column:
+                  name: age
+                  value: 25
+              - column:
+                  name: phone
+                  value: "0559956326"
+              - column:
+                  name: email
+                  value: "ahasanov4444@gmail.com"
+              - column:
+                  name: balance
+                  value: 1500
+              - column:
+                  name: is_active
+                  valueBoolean: "true"
+              - column:
+                  name: password
+                  value: "password123"
+            tableName: user
+

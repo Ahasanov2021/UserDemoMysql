@@ -25,4 +25,6 @@ public class UserDto {
     String email;
 
     Double balance;
+
+    Boolean isActive;
 }

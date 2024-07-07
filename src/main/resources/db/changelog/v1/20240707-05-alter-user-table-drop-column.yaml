@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20240707-05
+      author: AHasanov
+      changes:
+        - dropColumn:
+            tableName: user
+            columns:
+              - column:
+                  name: is_active

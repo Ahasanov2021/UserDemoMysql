@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20240707-07
+      author: AHasanov
+      changes:
+        - modifyDataType:
+            tableName: user
+            columnName:  is_active
+            newDataType:  BIT(1)

@@ -29,4 +29,10 @@ public class User {
 
     Double balance;
 
+    Boolean isActive;
+
+    String password;
+
+
+
 }

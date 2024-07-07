@@ -12,5 +12,6 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 public interface UserMapper {
 
     @Mapping(target = "surname", source = "lastname")
+        //    @Mapping(target = "id", ignore = true)
     UserDto entityToDto(User user);
 }
