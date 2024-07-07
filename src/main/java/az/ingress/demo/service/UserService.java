@@ -1,9 +1,10 @@
 package az.ingress.demo.service;
 
+import az.ingress.demo.dto.UserDto;
 import az.ingress.demo.model.User;
 
 public interface UserService {
-    User get(Integer id);
+    UserDto get(Integer id);
 
     User create(User user);
 

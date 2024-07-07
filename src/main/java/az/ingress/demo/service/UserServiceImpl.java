@@ -1,6 +1,8 @@
 package az.ingress.demo.service;
 
 
+import az.ingress.demo.dto.UserDto;
+import az.ingress.demo.mapper.UserMapper;
 import az.ingress.demo.model.User;
 import az.ingress.demo.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -13,20 +15,18 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
-
+        this.userMapper = userMapper;
     }
 
     @Override
-    public User get(Integer id){
+    public UserDto get(Integer id){
         log.info("User service get method is working.");
-        Optional<User> user = userRepository.findById(id);
-        if(user.isEmpty()){
-            throw new RuntimeException("User not found");
-        }
-        return user.get();
+        User user = userRepository.findById(id).orElseThrow(()-> new RuntimeException("User not found"));
+        return userMapper.entityToDto(user);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class UserServiceImpl implements UserService {
         if(user.getName() != null){
             entity.setName(user.getName());
         }
-        if(user.getSurName() != null){
-            entity.setSurName(user.getSurName());
+        if(user.getLastname() != null){
+            entity.setLastname(user.getLastname());
         }
         if(user.getPhone() != null){
             entity.setPhone(user.getPhone());

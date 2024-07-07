@@ -13,17 +13,17 @@ services:
       - "5680:3306"
     networks:
       - mysql-app-network
-  mysql-app:
-    container_name: demo-app-mysql
-    image: mysql-app:v7
-#    build:
-#      dockerfile: Dockerfile
-    networks:
-      - mysql-app-network
-    ports:
-      - "8088:8088"
-    depends_on:
-      - mysql-db
+#  mysql-app:
+#    container_name: demo-app-mysql
+#    image: mysql-app:v7
+##    build:
+##      dockerfile: Dockerfile
+#    networks:
+#      - mysql-app-network
+#    ports:
+#      - "8088:8088"
+#    depends_on:
+#      - mysql-db
 
 
 volumes:

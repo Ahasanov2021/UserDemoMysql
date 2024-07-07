@@ -1,6 +1,7 @@
-package az.ingress.demo.model;
+package az.ingress.demo.dto;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,16 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDto {
     Integer id;
 
     String name;
 
-    String lastname;
+    String surname;
 
     Integer age;
 
@@ -28,5 +25,4 @@ public class User {
     String email;
 
     Double balance;
-
 }

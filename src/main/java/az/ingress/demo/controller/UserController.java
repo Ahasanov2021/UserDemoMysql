@@ -1,5 +1,6 @@
 package az.ingress.demo.controller;
 
+import az.ingress.demo.dto.UserDto;
 import az.ingress.demo.model.User;
 import az.ingress.demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User get(@PathVariable Integer id){
+    public UserDto get(@PathVariable Integer id){
         return userService.get(id);
     }
 

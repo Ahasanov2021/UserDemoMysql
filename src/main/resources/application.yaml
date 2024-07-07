@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     password: password
-    url: jdbc:mysql://mysql-db:3306/inventory
+    url: jdbc:mysql://localhost:5680/inventory
     username: user
   jpa:
     hibernate:

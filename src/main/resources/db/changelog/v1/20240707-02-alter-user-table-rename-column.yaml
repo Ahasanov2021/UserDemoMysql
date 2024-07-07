@@ -1,9 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 20231030-02
+      id: 20240707-02
       author: AHasanov
       changes:
         - renameColumn:
-            tableName: student
+            tableName: user
             oldColumnName: sur_name
             newColumnName: lastname
+            columnDataType: VARCHAR(255)
